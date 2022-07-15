@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/pop_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/primary_shadow"
+            android:textSize="22sp"
+            android:text="@string/popular" />
+
+        <TextView
+            android:id="@+id/pop_seeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/pop_title"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:text="@string/see_more"
+            android:textColor="@color/primary_blue"
+            android:textSize="20sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pop_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pop_title"
+            android:minHeight="200dp"
+            android:padding="10dp"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/movie_list_item"
+            tools:orientation="horizontal" />
+
+        <FrameLayout
+            android:id="@+id/pop_progress"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:layout_below="@id/pop_title">
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/release_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pop_recycler"
+            android:layout_marginStart="22dp"
+            android:text="@string/new_word"
+            android:textColor="@color/primary_shadow"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/release_seeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/release_title"
+            android:layout_alignParentEnd="true"
+            android:text="@string/see_more"
+            android:textSize="20sp"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/primary_blue"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/release_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/release_title"
+            android:minHeight="200dp"
+            android:padding="10dp"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/movie_list_item"
+            tools:orientation="horizontal" />
+
+        <FrameLayout
+            android:id="@+id/release_progress"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:layout_below="@id/release_title">
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
